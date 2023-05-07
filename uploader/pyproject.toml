@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "uploader"
+version = "1.0.0"
+description = ""
+authors = ["L Shaf <shafry2008@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+requests = "^2.30.0"
+pyinstaller = "^4"
+urllib3 = "1.26.15"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

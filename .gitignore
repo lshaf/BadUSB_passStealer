@@ -1,0 +1,5 @@
+.env
+__pycache__
+uploader/build
+uploader/dist
+uploader/*.spec
